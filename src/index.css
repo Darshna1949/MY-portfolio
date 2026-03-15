@@ -1,0 +1,17 @@
+/* Global baseline for full-viewport layout */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background: #f5f0e8;
+}
