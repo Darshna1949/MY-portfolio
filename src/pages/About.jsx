@@ -44,7 +44,7 @@ export default function About({ setPage }) {
     <div className="pg" style={{ paddingTop:"60px" }}>
 
       {/* ── HERO ── */}
-      <section style={{ display:"grid", gridTemplateColumns:"1.4fr 1fr", minHeight:"50vh" }}>
+      <section style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", minHeight:"50vh" }}>
         <div style={{ display:"flex", flexDirection:"column", justifyContent:"center", padding:`72px ${PX}` }}>
           <div className="a1" style={{ display:"flex", alignItems:"center", gap:"10px", marginBottom:"24px" }}>
             <div className="al" style={{ height:"1.5px", width:"38px", background:"#b46a2a" }} />
@@ -63,7 +63,7 @@ export default function About({ setPage }) {
 
       {/* ── BIO + STATS ── */}
       <section style={{ padding:`68px ${PX}`, background:"#f5f0e8" }}>
-        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1.05fr", gap:"60px", alignItems:"start" }}>
+        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(320px,1fr))", gap:"clamp(26px,4vw,60px)", alignItems:"start" }}>
 
           {/* Bio */}
           <div className="sr">
@@ -71,18 +71,21 @@ export default function About({ setPage }) {
               Where Technology<br />Meets Creative Vision
             </h2>
             <p className="epi" style={{ fontSize:"14px", lineHeight:1.95, color:"#6a5040", marginBottom:"16px", fontWeight:400 }}>
-              Coming from an IT background, I developed a strong interest in the creative side of technology. My journey began with creating visual content — posters, newsletters, and magazine layouts for the department media cell.
+              Coming from an IT background, I developed a strong interest in the creative side of technology. My journey began with creating visual content such as posters, newsletters, and magazine layouts for the department media cell.
             </p>
             <p className="epi" style={{ fontSize:"14px", lineHeight:1.95, color:"#6a5040", fontWeight:400 }}>
-              Through these experiences, I explored how typography, layout design, and visual structure make information more engaging. I have also explored UI design using Figma to build user-friendly digital interfaces.
+              Through these experiences, I explored how typography, layout design, and visual structure can make information more engaging and impactful. I have also explored UI design using Figma to create user friendly digital interfaces.
+            </p>
+            <p className="epi" style={{ fontSize:"14px", lineHeight:1.95, color:"#6a5040", marginTop:"16px", fontWeight:400 }}>
+              Along with UI/UX and web-based projects, I have a strong interest in visual communication and graphic design. I am currently exploring industry-standard tools like Adobe Illustrator and Adobe Photoshop to further enhance my creative and design capabilities.
             </p>
           </div>
 
           {/* Stats grid — offset stagger */}
           <div className="sr" style={{ transitionDelay:".1s" }}>
-            <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"10px" }}>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(170px,1fr))", gap:"10px" }}>
               {STATS.map((x,i) => (
-                <div key={x.l} style={{ background:i%2===0?"#ede6d6":"#e8dcc8", border:"1px solid rgba(140,110,75,.16)", padding:"22px 15px", marginTop:(i===1||i===3)?"16px":"0", textAlign:"center" }}>
+                <div key={x.l} style={{ background:i%2===0?"#ede6d6":"#e8dcc8", border:"1px solid rgba(140,110,75,.16)", padding:"22px 15px", textAlign:"center" }}>
                   <div className="fra" style={{ fontSize:"42px", color:"#b46a2a", lineHeight:1, fontWeight:900 }}>{x.n}</div>
                   <div className="epi" style={{ fontSize:"11px", fontWeight:700, color:"#2c1a0a", marginTop:"8px", letterSpacing:".04em" }}>{x.l}</div>
                   <div className="epi" style={{ fontSize:"10px", color:"#a09080", marginTop:"2px" }}>{x.s}</div>
@@ -98,7 +101,7 @@ export default function About({ setPage }) {
 
       {/* ── SKILLS + TOOLS ── */}
       <section style={{ padding:`60px ${PX}`, background:"#ede6d6" }}>
-        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:"60px" }}>
+        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(320px,1fr))", gap:"clamp(26px,4vw,60px)" }}>
 
           {/* Skills */}
           <div className="sr">
