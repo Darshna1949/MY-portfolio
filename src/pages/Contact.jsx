@@ -31,10 +31,40 @@ const OPEN_FOR = ["Design Internship","UI/UX Projects","Freelance Work","Collabo
 export default function Contact() {
   useReveal();
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name:"", email:"", subject:"", message:"" });
 
-  const handleSubmit = () => {
-    if (form.name && form.email && form.message) setSent(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const subject = form.subject.trim();
+    const message = form.message.trim();
+
+    if (!name || !email || !message) {
+      setError("Please fill in name, email, and message.");
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    setError("");
+    const finalSubject = subject || `Portfolio message from ${name}`;
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      "",
+      message,
+    ].join("\n");
+
+    const mailto = `mailto:gangodadarshna@gmail.com?subject=${encodeURIComponent(finalSubject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    setSent(true);
   };
 
   return (
@@ -117,21 +147,27 @@ export default function Contact() {
               </div>
             ) : (
               /* Form */
-              <div style={{ background:"#ede6d6", border:"1px solid rgba(140,110,75,.15)", padding:"28px" }}>
+              <form onSubmit={handleSubmit} style={{ background:"#ede6d6", border:"1px solid rgba(140,110,75,.15)", padding:"28px" }}>
                 <h3 className="fra" style={{ fontSize:"22px", color:"#1e1208", marginBottom:"4px", fontWeight:700 }}>Send a Message</h3>
                 <p className="epi" style={{ fontSize:"11px", color:"#a09080", marginBottom:"20px" }}>I respond within 24 hours.</p>
 
                 <div className="contact-form-grid">
-                  <input className="fin" placeholder="Your Name"  value={form.name}    onChange={e => setForm({...form, name:e.target.value})} />
-                  <input className="fin" type="email" placeholder="Your Email" value={form.email}   onChange={e => setForm({...form, email:e.target.value})} />
+                  <input className="fin" placeholder="Your Name" value={form.name} onChange={e => setForm({...form, name:e.target.value})} />
+                  <input className="fin" type="email" placeholder="Your Email" value={form.email} onChange={e => setForm({...form, email:e.target.value})} />
                 </div>
                 <input    className="fin" placeholder="Subject"   value={form.subject} onChange={e => setForm({...form, subject:e.target.value})} style={{ marginBottom:"8px" }} />
                 <textarea className="fin" rows={5} placeholder="Your Message..." value={form.message} onChange={e => setForm({...form, message:e.target.value})} style={{ resize:"vertical", display:"block", marginBottom:"12px" }} />
 
-                <button className="bi epi" onClick={handleSubmit} style={{ width:"100%", justifyContent:"center", padding:"13px", fontSize:"13px" }}>
+                {error && (
+                  <p className="epi" style={{ fontSize:"11px", color:"#9b3d2b", marginBottom:"10px" }}>
+                    {error}
+                  </p>
+                )}
+
+                <button type="submit" className="bi epi" style={{ width:"100%", justifyContent:"center", padding:"13px", fontSize:"13px" }}>
                   Send Message
                 </button>
-              </div>
+              </form>
             )}
           </div>
 

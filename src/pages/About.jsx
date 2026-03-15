@@ -77,7 +77,7 @@ export default function About({ setPage }) {
               Through these experiences, I explored how typography, layout design, and visual structure can make information more engaging and impactful. I have also explored UI design using Figma to create user friendly digital interfaces.
             </p>
             <p className="epi" style={{ fontSize:"14px", lineHeight:1.95, color:"#6a5040", marginTop:"16px", fontWeight:400 }}>
-              Along with UI/UX and web-based projects, I have a strong interest in visual communication and graphic design. I am currently exploring industry-standard tools like Adobe Illustrator and Adobe Photoshop to further enhance my creative and design capabilities.
+              Along with UI/UX and web-based projects, I have a strong interest in visual communication and graphic design. I am currently exploring industry standard tools like Adobe Illustrator and Adobe Photoshop to further enhance my creative and design capabilities.
             </p>
           </div>
 

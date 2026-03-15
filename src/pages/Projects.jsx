@@ -57,9 +57,9 @@ const PROJECTS = [
     id: "01",
     title: "Social Media & Event Poster Designs",
     cat: "Graphic Design",
-    year: "2024",
+    year: "2024 - Present",
     tags: ["Canva", "Instagram", "Social Media", "Print"],
-    desc: "As part of the department media team, I designed posters for Instagram announcements, departmental events, and placement updates — balancing typography, colors, and visual hierarchy for instant readability.",
+    desc: "As part of the department media team, I designed posters for Instagram announcements, departmental events, and placement updates balancing typography, colors, and visual hierarchy for instant readability.",
     links: [],
   },
   {
@@ -82,11 +82,11 @@ const PROJECTS = [
           "Expert talks on REST vs MVC architecture",
           "Cybersecurity workshop and academic seminars",
           "Faculty research publications and FDP participation",
-          "Student achievements including Microsoft Learn Ambassador recognition",
+          "Student achievements",
           "Hackathon achievements such as Odoo Combat and Spark The Summer Hackathon",
         ],
         contribution: [
-          "Magazine layout design and formatting",
+          "Newsletter layout design and formatting",
           "Content alignment and page layout consistency",
           "Graphic elements and visual composition",
           "Collaboration with editorial team",
@@ -97,7 +97,7 @@ const PROJECTS = [
         volume: "Volume 10 | Jan 2025 - Dec 2025",
         imageKey: "image9_png",
         overview:
-          "Designed and contributed to the annual newsletter of the Information Technology Department at Vishwakarma Government Engineering College. The newsletter documents departmental activities, workshops, achievements, research contributions, and student accomplishments throughout the academic year.",
+          "Designed and contributed to the annual newsletter of the Information Technology Department. The newsletter documents departmental activities, workshops, achievements, research contributions, and student accomplishments throughout the academic year.",
         highlights: [
           "Orientation & Student Induction Program 2025",
           "Workshops on Artificial Intelligence and Web Designing",

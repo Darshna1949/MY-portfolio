@@ -35,7 +35,7 @@ export default function Home({ setPage }) {
         <div style={{ display:"flex", flexDirection:"column", justifyContent:"center", padding:`72px ${PX}` }}>
           <div className="a1" style={{ display:"flex", alignItems:"center", gap:"10px", marginBottom:"30px" }}>
             <div className="al" style={{ height:"1.5px", width:"38px", background:"#b46a2a" }} />
-            <span className="epi" style={{ fontSize:"10px", fontWeight:700, letterSpacing:".22em", textTransform:"uppercase", color:"#b46a2a" }}>Portfolio · 2025</span>
+            <span className="epi" style={{ fontSize:"10px", fontWeight:700, letterSpacing:".22em", textTransform:"uppercase", color:"#b46a2a" }}>Portfolio</span>
           </div>
 
           <h1 className="a2 fra" style={{ fontSize:"clamp(46px,6.5vw,80px)", lineHeight:.88, letterSpacing:"-.02em", color:"#1e1208", marginBottom:"20px" }}>
@@ -115,7 +115,7 @@ export default function Home({ setPage }) {
           {/* 2-column preview cards */}
           <div style={{ display:"grid", gridTemplateColumns:"1.1fr 1fr", gap:"14px" }}>
             {[
-              { img:"image2_png",  cat:"Graphic Design",  year:"2024",    title:"Social Media & Event Poster Designs", desc:"Posters for Instagram announcements, departmental events and placement updates." },
+              { img:"image2_png",  cat:"Graphic Design",  year:"2024 - Present",    title:"Social Media & Event Poster Designs", desc:"Posters for Instagram announcements, departmental events and placement updates." },
               { img:"image9_png",  cat:"Editorial Layout", year:"2024–25", title:"Department Newsletter Design",         desc:"Newsletter pages highlighting department activities and academic updates." },
             ].map((p,i) => (
               <div key={i} className="sr pc" style={{ transitionDelay:`${i*.08}s`, cursor:"pointer", overflow:"hidden" }} onClick={() => setPage("projects")}>
