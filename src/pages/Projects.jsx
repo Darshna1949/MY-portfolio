@@ -151,7 +151,7 @@ const PROJECTS = [
 /* P01 — 3 posters (portrait ~0.8:1 and square ~1:1) */
 function GalleryPosters() {
   return (
-    <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:"10px", alignItems:"start" }}>
+    <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))", gap:"10px", alignItems:"start" }}>
       {["image2_png","image3_png","image4_png"].map(k => <ImgCell key={k} imgKey={k} />)}
     </div>
   );
@@ -161,8 +161,10 @@ function GalleryPosters() {
    200px wide on left, description text on right */
 function GalleryMagazine() {
   return (
-    <div style={{ display:"grid", gridTemplateColumns:"200px 1fr", gap:"28px", alignItems:"start" }}>
-      <ImgCell imgKey="image13_png" />
+    <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:"clamp(16px,3vw,28px)", alignItems:"start" }}>
+      <div style={{ maxWidth:"220px" }}>
+        <ImgCell imgKey="image13_png" />
+      </div>
       <div>
         <div className="fra" style={{ fontSize:"18px", color:"#1e1208", fontWeight:700, marginBottom:"8px", lineHeight:1.2 }}>
           TechTreasure Volume 06, 2025
@@ -186,16 +188,15 @@ function GalleryUI() {
   return (
     <div style={{ display:"flex", flexDirection:"column", gap:"18px" }}>
       <div>
-        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"10px", alignItems:"start" }}>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:"10px", alignItems:"start" }}>
           {["image14_png","image15_png","image16_png","image17_png"].map(k => <ImgCell key={k} imgKey={k} />)}
         </div>
       </div>
       <div>
         <SectionLabel text="Mobile Screens" />
-        {/* Fixed 150px width — keeps tall portrait from stretching awkwardly */}
-        <div style={{ display:"flex", gap:"12px", alignItems:"flex-start" }}>
+        <div style={{ display:"flex", gap:"12px", alignItems:"flex-start", flexWrap:"wrap" }}>
           {["image18_png","image19_png"].map(k => (
-            <div key={k} style={{ width:"150px", flexShrink:0 }}>
+            <div key={k} style={{ width:"min(150px, calc(50% - 6px))", minWidth:"120px", flexShrink:0 }}>
               <ImgCell imgKey={k} />
             </div>
           ))}
@@ -239,7 +240,7 @@ export default function Projects() {
             <span className="epi" style={{ fontSize:"10px", fontWeight:700, letterSpacing:".22em", textTransform:"uppercase", color:"#b46a2a" }}>Portfolio</span>
           </div>
 
-          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"28px", alignItems:"end", paddingBottom:"44px" }}>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gap:"clamp(18px,3vw,28px)", alignItems:"end", paddingBottom:"44px" }}>
             <h1 className="a2 fra" style={{ fontSize:"clamp(40px,8vw,82px)", lineHeight:.9, letterSpacing:"-.025em", color:"#f5f0e8" }}>
               All<br /><em style={{ color:"#b46a2a", fontWeight:300 }}>Projects</em>
             </h1>
@@ -304,7 +305,7 @@ export default function Projects() {
 
                         <p className="epi" style={{ fontSize:"12px", lineHeight:1.85, color:"#6a5040", marginBottom:"10px", fontWeight:400 }}>{sec.overview}</p>
 
-                        <div style={{ display:"grid", gridTemplateColumns:"210px 1fr", gap:"18px", alignItems:"start" }}>
+                        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:"18px", alignItems:"start" }}>
                           <div>
                             <ImgCell imgKey={sec.imageKey} />
                           </div>

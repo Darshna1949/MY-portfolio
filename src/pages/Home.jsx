@@ -29,7 +29,7 @@ export default function Home({ setPage }) {
     <div className="pg">
 
       {/* ── HERO ── */}
-      <section style={{ minHeight:"100vh", display:"grid", gridTemplateColumns:"1fr 1fr", paddingTop:"60px", overflow:"hidden" }}>
+      <section style={{ minHeight:"100vh", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", paddingTop:"60px", overflow:"hidden" }}>
 
         {/* Left — text */}
         <div style={{ display:"flex", flexDirection:"column", justifyContent:"center", padding:`72px ${PX}` }}>
@@ -94,7 +94,7 @@ export default function Home({ setPage }) {
       <section style={{ padding:`84px ${PX}`, background:"#f5f0e8" }}>
         <div style={{ maxWidth:"1100px", margin:"0 auto" }}>
 
-          <div className="sr" style={{ display:"grid", gridTemplateColumns:"1.15fr 1fr", gap:"44px", alignItems:"end", marginBottom:"44px" }}>
+          <div className="sr" style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gap:"clamp(22px,4vw,44px)", alignItems:"end", marginBottom:"44px" }}>
             <div>
               <div style={{ display:"flex", alignItems:"center", gap:"10px", marginBottom:"14px" }}>
                 <div style={{ height:"1.5px", width:"26px", background:"#b46a2a", flexShrink:0 }} />
@@ -113,7 +113,7 @@ export default function Home({ setPage }) {
           </div>
 
           {/* 2-column preview cards */}
-          <div style={{ display:"grid", gridTemplateColumns:"1.1fr 1fr", gap:"14px" }}>
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))", gap:"14px" }}>
             {[
               { img:"image2_png",  cat:"Graphic Design",  year:"2024 - Present",    title:"Social Media & Event Poster Designs", desc:"Posters for Instagram announcements, departmental events and placement updates." },
               { img:"image9_png",  cat:"Editorial Layout", year:"2024–25", title:"Department Newsletter Design",         desc:"Newsletter pages highlighting department activities and academic updates." },

@@ -312,14 +312,37 @@ footer { animation: footIn .55s .08s cubic-bezier(.22,1,.36,1) both; }
   .contact-form-grid {
     grid-template-columns: 1fr;
   }
+
+  .contact-section {
+    padding-bottom: 64px !important;
+  }
+
+  .contact-form-card,
+  .contact-success-card {
+    padding: 20px !important;
+  }
+
+  .contact-row {
+    align-items: flex-start !important;
+  }
+
+  .contact-row-value {
+    font-size: 12px !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-hero-title {
+    line-height: .95 !important;
+  }
 }
 
 @media (max-width: 900px) {
-  nav > div {
+  .nav-links {
     gap: 14px !important;
   }
 
-  nav .nl {
+  .nav-links .nl {
     font-size: 10px !important;
     letter-spacing: .1em !important;
   }
@@ -330,8 +353,23 @@ footer { animation: footIn .55s .08s cubic-bezier(.22,1,.36,1) both; }
     padding: 0 14px !important;
   }
 
-  nav > div {
-    display: none !important;
+  .nav-links {
+    display: flex !important;
+    gap: 10px !important;
+    max-width: 68vw;
+    overflow-x: auto;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links .nl {
+    flex: 0 0 auto;
+    font-size: 9px !important;
   }
 
   footer {
@@ -374,7 +412,7 @@ function Nav({ page, setPage }) {
       </button>
 
       {/* Page links */}
-      <div style={{ display:"flex", gap:"24px" }}>
+      <div className="nav-links" style={{ display:"flex", gap:"24px" }}>
         {["home","about","projects","contact"].map(p => (
           <button key={p} className={`nl${page===p?" on":""}`} onClick={() => setPage(p)}>{p}</button>
         ))}

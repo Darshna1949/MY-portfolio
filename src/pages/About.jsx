@@ -44,7 +44,7 @@ export default function About({ setPage }) {
     <div className="pg" style={{ paddingTop:"60px" }}>
 
       {/* ── HERO ── */}
-      <section style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))", minHeight:"50vh" }}>
+      <section style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))", minHeight:"50vh" }}>
         <div style={{ display:"flex", flexDirection:"column", justifyContent:"center", padding:`72px ${PX}` }}>
           <div className="a1" style={{ display:"flex", alignItems:"center", gap:"10px", marginBottom:"24px" }}>
             <div className="al" style={{ height:"1.5px", width:"38px", background:"#b46a2a" }} />
@@ -63,7 +63,7 @@ export default function About({ setPage }) {
 
       {/* ── BIO + STATS ── */}
       <section style={{ padding:`68px ${PX}`, background:"#f5f0e8" }}>
-        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(320px,1fr))", gap:"clamp(26px,4vw,60px)", alignItems:"start" }}>
+        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))", gap:"clamp(26px,4vw,60px)", alignItems:"start" }}>
 
           {/* Bio */}
           <div className="sr">
@@ -101,7 +101,7 @@ export default function About({ setPage }) {
 
       {/* ── SKILLS + TOOLS ── */}
       <section style={{ padding:`60px ${PX}`, background:"#ede6d6" }}>
-        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(320px,1fr))", gap:"clamp(26px,4vw,60px)" }}>
+        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))", gap:"clamp(26px,4vw,60px)" }}>
 
           {/* Skills */}
           <div className="sr">

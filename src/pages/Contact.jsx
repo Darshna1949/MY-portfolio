@@ -80,7 +80,7 @@ export default function Contact() {
             <div className="al" style={{ height:"1.5px", width:"38px", background:"#b46a2a" }} />
             <span className="epi" style={{ fontSize:"10px", fontWeight:700, letterSpacing:".22em", textTransform:"uppercase", color:"#b46a2a" }}>Get in Touch</span>
           </div>
-          <h1 className="a2 fra" style={{ fontSize:"clamp(40px,8vw,82px)", lineHeight:.9, letterSpacing:"-.025em", color:"#1e1208" }}>
+          <h1 className="a2 fra contact-hero-title" style={{ fontSize:"clamp(40px,8vw,82px)", lineHeight:.9, letterSpacing:"-.025em", color:"#1e1208" }}>
             Let us Build<br />Something<br /><em style={{ color:"#b46a2a", fontWeight:300 }}>Beautiful</em>
           </h1>
         </div>
@@ -89,7 +89,7 @@ export default function Contact() {
       <hr className="hr" />
 
       {/* ── SPLIT: INFO + FORM ── */}
-      <section style={{ padding:`60px ${PX} 96px`, background:"#f5f0e8" }}>
+      <section className="contact-section" style={{ padding:`60px ${PX} 96px`, background:"#f5f0e8" }}>
         <div className="contact-content-wrap">
 
           {/* Info column */}
@@ -105,6 +105,7 @@ export default function Contact() {
                 href={x.href}
                 target={x.href.startsWith("http") ? "_blank" : "_self"}
                 rel="noreferrer"
+                className="contact-row"
                 style={{ display:"flex", alignItems:"center", gap:"13px", padding:"13px 15px", background:"#ede6d6", border:"1px solid rgba(140,110,75,.15)", marginBottom:"8px", textDecoration:"none", transition:"border-color .2s" }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = "#b46a2a"}
                 onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(140,110,75,.15)"}
@@ -112,9 +113,9 @@ export default function Contact() {
                 <div style={{ width:"33px", height:"33px", background:"rgba(180,106,42,.09)", border:"1px solid rgba(180,106,42,.17)", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
                   <span style={{ color:"#b46a2a", fontSize:"12px", fontWeight:700, fontFamily:"'Epilogue',sans-serif" }}>{x.icon}</span>
                 </div>
-                <div>
+                <div style={{ minWidth:0 }}>
                   <div className="epi" style={{ fontSize:"9px", fontWeight:700, letterSpacing:".14em", textTransform:"uppercase", color:"#a09080" }}>{x.lbl}</div>
-                  <div className="epi" style={{ fontSize:"13px", color:"#3d2010", marginTop:"2px", fontWeight:500 }}>{x.val}</div>
+                  <div className="epi contact-row-value" style={{ fontSize:"13px", color:"#3d2010", marginTop:"2px", fontWeight:500 }}>{x.val}</div>
                 </div>
               </a>
             ))}
@@ -136,7 +137,7 @@ export default function Contact() {
           <div className="sr" style={{ transitionDelay:".1s" }}>
             {sent ? (
               /* Success state */
-              <div style={{ textAlign:"center", padding:"48px 30px", background:"#ede6d6", border:"1px solid rgba(140,110,75,.18)" }}>
+              <div className="contact-success-card" style={{ textAlign:"center", padding:"48px 30px", background:"#ede6d6", border:"1px solid rgba(140,110,75,.18)" }}>
                 <div style={{ width:"52px", height:"52px", background:"rgba(180,106,42,.1)", border:"1.5px solid rgba(180,106,42,.28)", display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 18px" }}>
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M4 11l4 4L16 5" stroke="#b46a2a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -147,7 +148,7 @@ export default function Contact() {
               </div>
             ) : (
               /* Form */
-              <form onSubmit={handleSubmit} style={{ background:"#ede6d6", border:"1px solid rgba(140,110,75,.15)", padding:"28px" }}>
+              <form onSubmit={handleSubmit} className="contact-form-card" style={{ background:"#ede6d6", border:"1px solid rgba(140,110,75,.15)", padding:"28px" }}>
                 <h3 className="fra" style={{ fontSize:"22px", color:"#1e1208", marginBottom:"4px", fontWeight:700 }}>Send a Message</h3>
                 <p className="epi" style={{ fontSize:"11px", color:"#a09080", marginBottom:"20px" }}>I respond within 24 hours.</p>
 
